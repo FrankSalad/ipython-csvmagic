@@ -17,7 +17,7 @@ a.csv
 
 iPython:
 ```
-In [7]: %loadcsv /Users/frank/foo.csv
+In [7]: %loadcsv a.csv
 Loaded 2 values in n,order_number,name
 
 In [8]: n
