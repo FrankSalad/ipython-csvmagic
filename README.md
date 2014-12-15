@@ -46,8 +46,6 @@ Out[16]: ['John Snow', 'Princess Bubblegum']
 
 Exporting Data:
 ```
-In [22]: names = ['Charles Darwin', 'Margaret Atwood', 'Phillip K. Dick']
-
 In [23]: title = ['The Origin of Species', 'Oryx and Crake', 'Fahrenheit 451']
 
 In [24]: name = ['Charles Darwin', 'Margaret Atwood', 'Ray Bradbury']
