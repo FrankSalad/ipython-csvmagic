@@ -7,7 +7,7 @@ To install:
 
 %install_ext https://raw.githubusercontent.com/FrankSalad/ipython-csvmagic/master/csvtools.py
 
-#Example:
+##Example Usage:
 a.csv
 ```
 "n","order_number","name"
