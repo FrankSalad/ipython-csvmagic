@@ -8,7 +8,7 @@ To install, in iPython shell:
 %install_ext https://raw.githubusercontent.com/FrankSalad/ipython-csvmagic/master/csvtools.py
 ```
 
-##Importing Data:
+###Importing Data:
 a.csv
 ```
 "n","order_number","name"
@@ -44,7 +44,7 @@ In [16]: col_name
 Out[16]: ['John Snow', 'Princess Bubblegum']
 ```
 
-##Exporting Data:
+###Exporting Data:
 ```
 In [23]: title = ['The Origin of Species', 'Oryx and Crake', 'Fahrenheit 451']
 
