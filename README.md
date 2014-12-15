@@ -28,3 +28,18 @@ Out[9]: ['389', '405']
 In [10]: name
 Out[10]: ['John Snow', 'Princess Bubblegum']
 ```
+
+Also supports prefixing headers:
+```
+In [13]: %loadcsv a.csv col_
+Loaded 2 values in col_n,col_order_number,col_name
+
+In [14]: col_n
+Out[14]: ['0', '1']
+
+In [15]: col_order_number
+Out[15]: ['389', '405']
+
+In [16]: col_name
+Out[16]: ['John Snow', 'Princess Bubblegum']
+```
