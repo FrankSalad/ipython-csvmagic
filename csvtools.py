@@ -2,6 +2,27 @@ from __future__ import print_function
 
 from IPython.core.magic import Magics, magics_class, line_magic
 import csv
+import string
+import keyword
+
+
+def ident_escape(header, fill='_'):
+    """ Escapes the column header string to make it a valid Python identifier.
+    """
+    # Reference: https://docs.python.org/2/reference/lexical_analysis.html#identifiers
+    # Starts with a number
+    if header[0] in string.digits:
+        header = fill + header
+
+    if keyword.iskeyword(header):
+        header = fill + header
+
+    mut = bytearray(header)
+    valid = set(string.ascii_letters+string.digits)
+    for i, c in enumerate(header):
+        if c not in valid:
+            mut[i] = fill
+    return str(mut)
 
 
 @magics_class
@@ -30,8 +51,9 @@ class CSVMagics(Magics):
             for column_name in header:
                 value_list = []
                 lists.append(value_list)
-                names.append(prefix+column_name)
-                ip.user_ns[prefix+column_name] = value_list
+                identifier = ident_escape(prefix+column_name)
+                names.append(identifier)
+                ip.user_ns[identifier] = value_list
 
             for row in reader:
                 for i, val in enumerate(row):
