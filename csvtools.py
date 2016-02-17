@@ -94,13 +94,13 @@ class CSVMagics(Magics):
             iterables.append(iterable)
 
         with open(filepath, 'wb') as csvfile:
-            quoted = ['"'+arg+'"' for arg in args]
-            csvfile.write(','.join(quoted))
+            quoted = [u'"'+arg+u'"' for arg in args]
+            csvfile.write(u','.join(quoted).encode('utf8'))
             csvfile.write('\n')
 
             for line in range(length):
-                row = ['"'+str(iterable.next())+'"' for iterable in iterables]
-                csvfile.write(','.join(row))
+                row = [u'"'+unicode(iterable.next())+u'"' for iterable in iterables]
+                csvfile.write(u','.join(row).encode('utf8'))
                 csvfile.write('\n')
 
 
